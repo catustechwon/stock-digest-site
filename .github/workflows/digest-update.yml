@@ -31,6 +31,11 @@ jobs:
           git commit -m 'Auto update digest' || echo 'No changes'
           git push
 
+      - name: Upload pages artifact 
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './public'
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
